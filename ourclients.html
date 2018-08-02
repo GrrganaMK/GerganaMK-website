@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+.loader {
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid #3498db;
+  width: 120px;
+  height: 120px;
+  -webkit-animation: spin 2s linear infinite; /* Safari */
+  animation: spin 2s linear infinite;
+}
+
+/* Safari */
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.header {
+  background-color: #f1f1f1;
+  padding: 30px;
+  text-align: center;
+  }
+  
+  .topnav {
+  position: relative;
+  overflow: hidden;
+  background-color:LightGrey;
+}
+
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: purple;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: purple;
+  color: white;
+}
+
+.topnav-centered a {
+  float: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.topnav-right {
+  float: right;
+}
+
+/* Responsive navigation menu (for mobile devices) */
+@media screen and (max-width: 600px) {
+  .topnav a, .topnav-right {
+    float: none;
+    display: block;
+  }
+  
+  .topnav-centered a {
+    position: relative;
+    top: 0;
+    left: 0;
+    transform: none;
+}
+/* The grid: Four equal columns that floats next to each other */
+.column {
+    float: left;
+    width: 25%;
+    padding: 10px;
+}
+
+/* Style the images inside the grid */
+.column img {
+    opacity: 0.8; 
+    cursor: pointer; 
+}
+
+.column img:hover {
+    opacity: 1;
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* The expanding image container */
+.container {
+    position: relative;
+    display: none;
+}
+
+/* Expanding image text */
+#imgtext {
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
+    color: white;
+    font-size: 20px;
+}
+
+/* Closable button inside the expanded image */
+.closebtn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    color: white;
+    font-size: 35px;
+    cursor: pointer;
+}
+}
+</style>
+</head>
+<body>
+
+<!-- Top navigation -->
+<div class="topnav">
+
+  <!-- Centered link -->
+  <div class="topnav-centeredup">
+    <a href="homepage.html" class="active">Home</a>
+  </div>
+  
+  <!-- Left-aligned links (default) -->
+  <a href="about.html">About Us</a>
+  <a href="contactuss.html">Contact Us</a>
+  
+  <!-- Right-aligned links -->
+  <div class="topnav-right">
+    <a href="clientss.html">Our Clients</a>
+	<a href="servicespage.html">Our Services</a>
+  </div>
+
+  <h1><center>OUR CLIENTS</center></h1>
+  
+  <h3>We have got big variety of clients </h3>
+  
+  <ul type="circle">
+  <li>Individuals</li>
+  <li>Health centers</li>
+  <li>Real estate companies</li>
+  <li>Food companies</li>
+  <li>Cosmetic companies</li>
+  <li>Fashion companies</li>
+  <li>Organic food companies</li>
+  <li>Restaurants</li>
+  <li>Hotels</li>
+  <li>Architecture companies</li>
+</ul>
+
+
+<h3>Some of the projects we have made for our clients</h3>
+
+   <!-- The four columns -->
+<div class="row">
+  <div class="column">
+    <img src="project1.jpg" alt="Project1" style="width:100%" onclick="myFunction(this);">
+  </div>
+  <div class="column">
+    <img src="project2.jpg" alt="Project2" style="width:100%" onclick="myFunction(this);">
+  </div>
+  <div class="column">
+    <img src="project3.jpg" alt="Project3" style="width:100%" onclick="myFunction(this);">
+  </div>
+  
+  <div class="column">
+    <img src="project4.png" alt="Project4" style="width:100%" onclick="myFunction(this);">  </div>
+	
+	<div class="column">
+	<img src="project5.jpg" alt="Project5" style="width:100%" onclick="myFunction(this);">  </div>
+	
+	<div class="column">
+    <img src="project6.jpg" alt="Project6" style="width:100%" onclick="myFunction(this);">  </div>
+	
+
+<div class="container">
+  <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
+  <img id="expandedImg" style="width:100%">
+  <div id="imgtext"></div>
+</div>
+
+<script>
+function myFunction(imgs) {
+    var expandImg = document.getElementById("expandedImg");
+    var imgText = document.getElementById("imgtext");
+    expandImg.src = imgs.src;
+    imgText.innerHTML = imgs.alt;
+    expandImg.parentElement.style.display = "block";
+}
+</script>
+</body>
+</html>

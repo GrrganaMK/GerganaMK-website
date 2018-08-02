@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+.loader {
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid #3498db;
+  width: 120px;
+  height: 120px;
+  -webkit-animation: spin 2s linear infinite; /* Safari */
+  animation: spin 2s linear infinite;
+}
+
+/* Safari */
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.header {
+  background-color: #f1f1f1;
+  padding: 30px;
+  text-align: center;
+  }
+  
+  .topnav {
+  position: relative;
+  overflow: hidden;
+  background-color:LightGrey;
+}
+
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: purple;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: purple;
+  color: white;
+}
+
+.topnav-centered a {
+  float: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.topnav-right {
+  float: right;
+}
+
+/* Responsive navigation menu (for mobile devices) */
+@media screen and (max-width: 600px) {
+  .topnav a, .topnav-right {
+    float: none;
+    display: block;
+  }
+  
+  .topnav-centered a {
+    position: relative;
+    top: 0;
+    left: 0;
+    transform: none;
+}
+}
+</style>
+</head>
+<body>
+
+<!-- Top navigation -->
+<div class="topnav">
+
+  <!-- Centered link -->
+  <div class="topnav-centeredup">
+    <a href="homepage.html" class="active">Home</a>
+  </div>
+  
+  <!-- Left-aligned links (default) -->
+  <a href="about.html">About Us</a>
+  <a href="contactuss.html">Contact Us</a>
+  
+  <!-- Right-aligned links -->
+  <div class="topnav-right">
+    <a href="ourclients.html">Our Clients</a>
+	<a href="servicespage.html">Our Services</a>
+  </div>
+
+<!-- Slide Show -->
+<section>
+  <img class="mySlides" src="1.jpg"
+  style="width:100%">
+  <img class="mySlides" src="gamedevelopi.jpg"
+  style="width:100%">
+  <img class="mySlides" src="grdesign.jpg"
+  style="width:100%">
+</section>
+
+
+<!-- Website Description -->
+<hr>
+  <h1><center>G.M.MEDIA</center></h1>
+  <center>We create it for you<center>
+  <p class="w3-justify">When G.M.Media was created in 2004 we formed a great team and partnership.<br>
+  Today we are globally distributed with offices in more than 10 countries around the world.<br>
+  You can reach us wherever you are because we are everywhere.
+  With our passionate team we create distinctive work for you.
+  </p>
+  <hr>
+</section>
+
+<!-- Footer -->
+<footer class="w3-container w3-padding-64 w3-center w3-black w3-xlarge">
+  <a href="#"><i class="fa fa-facebook-official"></i></a>
+  <a href="#"><i class="fa fa-pinterest-p"></i></a>
+  <a href="#"><i class="fa fa-twitter"></i></a>
+  <a href="#"><i class="fa fa-flickr"></i></a>
+  <a href="#"><i class="fa fa-linkedin"></i></a>
+  <p class="w3-medium">
+  </p>
+</footer>
+
+
+<script>
+
+
+// Automatic Slideshow - change image every 3 seconds
+var myIndex = 0;
+carousel();
+
+function carousel() {
+    var i;
+    var x = document.getElementsByClassName("mySlides");
+    for (i = 0; i < x.length; i++) {
+       x[i].style.display = "none";
+    }
+    myIndex++;
+    if (myIndex > x.length) {myIndex = 1}
+    x[myIndex-1].style.display = "block";
+    setTimeout(carousel, 3000);
+}
+</script>
+</body>
+</html>
